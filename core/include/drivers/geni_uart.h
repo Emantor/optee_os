@@ -13,7 +13,6 @@
 struct geni_uart_data {
 	struct io_pa_va base;
 	struct serial_chip chip;
-	uint32_t oversampling; /* 16 or 32 */
 };
 
 void geni_uart_init(struct geni_uart_data *pd, paddr_t base);
