@@ -1,0 +1,50 @@
+menu "core settings"
+
+config CORE_TZSRAM_EMUL_SIZE
+	hex "TZSRAM Emulation Size"
+	default 0x70000
+
+config LPAE_ADDR_SPACE_BITS
+	int "LPAE Adress Space Bits"
+	default 32
+
+config MMAP_REGIONS
+	int "MMAP Regions"
+	default 13
+
+config RESERVED_VASPACE_SIZE
+	hex "Reserved Virtual Address Space size"
+	default 0xa00000
+
+config NEX_DYN_VASPACE_SIZE
+	hex "Nexus Dynamic Virtual Adress Space size"
+	default 0x100000
+
+config TEE_DYN_VASPACE_SIZE
+	hex "TEE Dynamic Virtual Adress Space size"
+	default 0x100000
+
+config ARM64_CORE
+	bool "64Bit core"
+
+config ARM32_CORE
+	bool "32Bit core"
+
+config CORE_ARM64_PA_BITS
+	int "ARM64 PA BITS"
+	depends on ARM64_CORE
+	default 32
+
+config WITH_VFP
+	bool "VFP Support"
+
+config CORE_WORKAROUND_SPECTRE_BP
+	bool "Spectre BP Workaround"
+	default y
+	imply CORE_WORKAROUND_SPECTRE_BP_SEC
+
+config CORE_WORKAROUND_SPECTRE_BP_SEC
+	bool "Spectre BP Workaround for Secure Monitor"
+	default y
+
+endmenu

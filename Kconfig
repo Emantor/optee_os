@@ -1,0 +1,3 @@
+mainmenu "OP-TEE OS Configuration"
+
+source "core/Kconfig"
