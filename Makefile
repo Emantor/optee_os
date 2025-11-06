@@ -127,3 +127,12 @@ checkpatch-working:
 
 checkpatch-staging:
 	${q}./scripts/checkpatch.sh --cached
+
+menuconfig:
+	python3 scripts/kconfig/menuconfig.py
+
+oldconfig:
+	python3 scripts/kconfig/oldconfig.py
+
+olddefconfig:
+	python3 scripts/kconfig/olddefconfig.py
